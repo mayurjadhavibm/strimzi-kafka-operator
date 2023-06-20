@@ -89,7 +89,7 @@ if [ "$TEST_CLUSTER" = "minikube" ]; then
       set -ex
     fi
 
-    if [ "$ARCH" = "s390x" ] || [ "$ARCH" = "ppc64le" ]; then
+    if [ "$ARCH" = "s390x-Skipp-s390x-MJ" ] || [ "$ARCH" = "ppc64le" ]; then
         git clone -b v1.9.11 --depth 1 https://github.com/kubernetes/kubernetes.git
         sed -i 's/:1.11//' kubernetes/cluster/addons/registry/images/Dockerfile
         docker build --pull -t gcr.io/google_containers/kube-registry-proxy:0.4-${ARCH} kubernetes/cluster/addons/registry/images/
